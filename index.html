@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M & M - Premium Mangoes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #fef9e7;
+            color: #333;
+            line-height: 1.5;
+            padding: 15px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            max-width: 400px;
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        /* Mango Animation at Top */
+        .mango-animation {
+            height: 180px;
+            margin: -25px -25px 20px -25px;
+            overflow: hidden;
+            border-radius: 15px 15px 0 0;
+            position: relative;
+        }
+        
+        .mango-slides {
+            display: flex;
+            width: 400%;
+            height: 100%;
+            animation: slide 16s infinite ease-in-out;
+        }
+        
+        .mango-slide {
+            width: 25%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .slide1 { background-image: url('https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80'); } /* Fresh mangoes */
+        .slide2 { background-image: url('https://images.unsplash.com/photo-1603569283847-aa295f0d016a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80'); } /* Mango slices */
+        .slide3 { background-image: url('https://images.unsplash.com/photo-1600271886742-f049cd451bba?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80'); } /* Mango juice glass */
+        .slide4 { background-image: url('https://images.unsplash.com/photo-1553279768-865429fa0078?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80'); } /* Mango basket */
+        
+        @keyframes slide {
+            0%, 20% { transform: translateX(0); }
+            25%, 45% { transform: translateX(-25%); }
+            50%, 70% { transform: translateX(-50%); }
+            75%, 95% { transform: translateX(-75%); }
+            100% { transform: translateX(0); }
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .hero-overlay span {
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: block;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            animation: fadeInOut 8s infinite;
+        }
+        
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0.8; transform: translateY(5px); }
+            50% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .company-name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #e67e22;
+            letter-spacing: 0.5px;
+        }
+        
+        .ampersand {
+            color: #f1c40f;
+            font-weight: 700;
+        }
+        
+        .tagline {
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        
+        .delivery-badge {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 10px 0;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 3px 6px rgba(231, 76, 60, 0.2);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .quality-badges {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+        
+        .quality-badge {
+            background: #f8f9fa;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            border: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .quality-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        .quality-badge i {
+            color: #f1c40f;
+            font-size: 0.9rem;
+        }
+        
+        /* Animated WhatsApp Box */
+        .whatsapp-box {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('https://images.unsplash.com/photo-1603569283847-aa295f0d016a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 25px 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            animation: whatsappPulse 3s infinite;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        @keyframes whatsappPulse {
+            0% { transform: scale(1); box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3); }
+            50% { transform: scale(1.02); box-shadow: 0 5px 25px rgba(37, 211, 102, 0.5); }
+            100% { transform: scale(1); box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3); }
+        }
+        
+        .whatsapp-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(37, 211, 102, 0.4);
+            z-index: 1;
+        }
+        
+        .whatsapp-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+            animation: bounce 1.5s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-5px) rotate(5deg); }
+            50% { transform: translateY(0) rotate(0deg); }
+            75% { transform: translateY(-3px) rotate(-5deg); }
+        }
+        
+        .whatsapp-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .order-btn {
+            background: linear-gradient(135deg, #e67e22, #d35400);
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 15px 0;
+            width: 100%;
+            box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .order-btn::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 50%;
+            height: 200%;
+            background: rgba(255,255,255,0.2);
+            transform: rotate(30deg);
+            transition: all 0.5s ease;
+        }
+        
+        .order-btn:hover::after {
+            left: 110%;
+        }
+        
+        .order-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(230, 126, 34, 0.4);
+        }
+        
+        .footer {
+            margin-top: 20px;
+            color: #95a5a6;
+            font-size: 0.8rem;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="mango-animation">
+            <div class="mango-slides">
+                <div class="mango-slide slide1"></div> <!-- Fresh mangoes -->
+                <div class="mango-slide slide2"></div> <!-- Mango slices -->
+                <div class="mango-slide slide3"></div> <!-- Mango juice -->
+                <div class="mango-slide slide4"></div> <!-- Mango basket -->
+            </div>
+            <div class="hero-overlay">
+                <span>100% Pure Mango Products</span>
+            </div>
+        </div>
+        
+        <div class="company-name">
+            M <span class="ampersand">&</span> M
+        </div>
+        <div class="tagline">The Sweetest Mangoes Delivered Fresh</div>
+        
+        <div class="delivery-badge">Cash Before Delivery</div>
+        
+        <div class="quality-badges">
+            <div class="quality-badge">
+                <i class="fas fa-check"></i> Farm Fresh
+            </div>
+            <div class="quality-badge">
+                <i class="fas fa-check"></i> Handpicked
+            </div>
+            <div class="quality-badge">
+                <i class="fas fa-check"></i> Natural
+            </div>
+        </div>
+        
+        <div class="whatsapp-box">
+            <div class="whatsapp-icon">
+                <i class="fab fa-whatsapp"></i>
+            </div>
+            <div class="whatsapp-text">
+                Order via WhatsApp
+            </div>
+        </div>
+        
+        <button class="order-btn" onclick="openWhatsAppChat()">
+            <i class="fas fa-shopping-basket"></i> Order Now
+        </button>
+        
+        <div class="footer">
+            &copy; 2024 M & M Premium Mangoes
+        </div>
+    </div>
+    
+    <script>
+        function openWhatsAppChat() {
+            const phoneNumber = "923024833827";
+            const defaultMessage = "Hello M & M! I want to order your premium mangoes. Please share details.";
+            window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
