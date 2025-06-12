@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mangoes of M & M</title>
 
-    <!-- Open Graph Meta Tags for Facebook -->
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Mangoes of M & M" />
     <meta property="og:description" content="Delicious, fresh mangoes delivered to your door!" />
     <meta property="og:image" content="https://th.bing.com/th/id/R.abb3bbe37c6593a9c5313fc98b72f3d2?rik=79C6Ax%2bq2u8qfw&pid=ImgRaw&r=0" />
@@ -21,7 +21,7 @@
         }
 
         body {
-            background-color: #f9a825; /* orange border color */
+            background-color: #f9a825;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -39,10 +39,29 @@
             text-align: center;
         }
 
+        .image-container {
+            position: relative;
+            width: 100%;
+        }
+
         .mango-image {
             width: 100%;
             height: auto;
             display: block;
+        }
+
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            color: #d84315;
+            font-size: 1.1rem;
+            pointer-events: none;
         }
 
         .content {
@@ -94,7 +113,10 @@
 <body>
 
     <div class="card">
-        <img class="mango-image" src="https://th.bing.com/th/id/R.abb3bbe37c6593a9c5313fc98b72f3d2?rik=79C6Ax%2bq2u8qfw&pid=ImgRaw&r=0" alt="Mangoes of M & M">
+        <div class="image-container">
+            <img class="mango-image" src="https://th.bing.com/th/id/R.abb3bbe37c6593a9c5313fc98b72f3d2?rik=79C6Ax%2bq2u8qfw&pid=ImgRaw&r=0" alt="Mangoes of M & M">
+            <div class="overlay-text">Click On This Page To Order Now</div>
+        </div>
         <div class="content">
             <div class="title">Mangoes of M & M</div>
             <div class="subtitle">Product/service</div>
