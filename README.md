@@ -1,12 +1,22 @@
+🍋 M & M - Premium Mangoes
+A beautifully animated, responsive landing page for M & M - Premium Mangoes, showcasing fresh mango products with engaging visuals, smooth animations, and a WhatsApp-based order system.
 
-### Key Highlights:
-1. **Visual Appeal**: Emojis and markdown formatting for readability.  
-2. **Modular Sections**: Easy to update (features, tech stack, customization).  
-3. **Actionable Steps**: Clear instructions for setup and customization.  
-4. **Professional Touch**: License and contact for credibility.  
+🌟 Features
+🍊 Animated mango slideshow (fresh, sliced, juice, and basket)
 
-**Optional Additions**:  
-- Add a "Contributing" section if open-source.  
-- Include a "Credits" section for attributions (e.g., Unsplash images).  
+🧡 Modern, clean design using Poppins font
 
-Let me know if you'd like to emphasize any specific aspect! 🚀
+📱 Responsive layout optimized for mobile devices
+
+📦 "Cash Before Delivery" badge with pulse animation
+
+✅ Quality indicators: Farm Fresh, Handpicked, Natural
+
+💬 Integrated WhatsApp order button with pre-filled message
+
+🎨 Eye-catching animations (pulse, bounce, fade, sliding images)
+
+⚡ Minimal dependencies and fast load
+
+🚀 Live Preview
+You can host this page using GitHub Pages or any static site service (e.g., Vercel, Netlify). Just upload the files and it's ready!
