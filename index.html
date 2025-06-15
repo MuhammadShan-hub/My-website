@@ -3,128 +3,953 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mangoes of M & M</title>
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Mangoes of M & M" />
-    <meta property="og:description" content="Delicious, fresh mangoes delivered to your door!" />
-    <meta property="og:image" content="https://th.bing.com/th/id/R.abb3bbe37c6593a9c5313fc98b72f3d2?rik=79C6Ax%2bq2u8qfw&pid=ImgRaw&r=0" />
-    <meta property="og:url" content="https://yourdomain.com" />
-    <meta property="og:type" content="website" />
-
+    <title>Shan Fruit Farm - Premium Pakistani Mangoes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
+        
         body {
-            background-color: #f9a825;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: url('https://3.imimg.com/data3/VE/KD/MY-7737235/fresh-mangoes-1000x1000.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #2e8b57;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 100;
+        }
+        
+        .logo {
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
-            padding: 20px;
+            margin-bottom: 15px;
         }
-
-        .card {
-            background-color: #ffffff;
-            border-radius: 10px;
-            overflow: hidden;
-            max-width: 600px;
-            width: 100%;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        
+        .logo img {
+            height: 70px;
+            margin-right: 15px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .logo-text {
             text-align: center;
         }
-
-        .image-container {
+        
+        .logo-text h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        
+        .logo-text p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
             position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #ffd700;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after {
             width: 100%;
         }
-
-        .mango-image {
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1603569283847-aa295f0d016a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,215,0,0.1)" d="M0,0 L100,0 L100,100 L0,100 Z" /><path fill="rgba(255,215,0,0.2)" d="M50,0 L100,50 L50,100 L0,50 Z" /></svg>');
+            background-size: 100px;
+            animation: patternMove 20s linear infinite;
+        }
+        
+        @keyframes patternMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 100px 100px; }
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+        
+        .btn-container {
+            animation: fadeIn 1s ease 0.6s both;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ffd700;
+            color: #333;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:hover {
+            background-color: #ffc800;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover::after {
+            left: 100%;
+        }
+        
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .whatsapp-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .whatsapp-btn:hover::after {
+            left: 100%;
+        }
+        
+        .whatsapp-btn img {
+            width: 20px;
+            margin-right: 10px;
+        }
+        
+        /* Products Section */
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: #2e8b57;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            background-color: rgba(255,255,255,0.9);
+            padding: 10px 20px;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, #2e8b57, #ffd700);
+            bottom: -10px;
+            left: 25%;
+            border-radius: 3px;
+        }
+        
+        .section-title p {
+            font-size: 18px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: rgba(255,255,255,0.8);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .product-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        /* Mango Animation */
+        .mango-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 2;
+        }
+        
+        .mango-particle {
+            position: absolute;
+            background-color: #ffd700;
+            border-radius: 50%;
+            opacity: 0;
+        }
+        
+        /* Juice Animation for Dusehri */
+        .juice-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .juice-drop {
+            position: absolute;
+            background-color: rgba(255, 165, 0, 0.6);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            opacity: 0;
+            filter: blur(2px);
+        }
+        
+        .product-info {
+            padding: 20px;
+            position: relative;
+            z-index: 3;
+            background: white;
+        }
+        
+        .product-info h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #2e8b57;
+        }
+        
+        .product-info p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: rgba(240, 247, 244, 0.9);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%232e8b57" opacity="0.1" d="M30,10 Q50,0 70,10 Q100,30 90,50 Q80,70 50,90 Q20,70 10,50 Q0,30 30,10 Z"/></svg>');
+            background-size: contain;
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .about-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.5s ease;
+            transform-style: preserve-3d;
+        }
+        
+        .about-img:hover {
+            transform: perspective(1000px) rotateY(10deg);
+        }
+        
+        .about-img img {
             width: 100%;
             height: auto;
             display: block;
+            transition: transform 0.5s ease;
         }
-
-        .overlay-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(255, 255, 255, 0.7);
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-weight: 600;
-            color: #d84315;
-            font-size: 1.1rem;
-            pointer-events: none;
-        }
-
-        .content {
-            padding: 20px;
-        }
-
-        .title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .subtitle {
-            font-size: 0.9rem;
-            color: #555;
-            margin-top: 5px;
-        }
-
-        .whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #25D366;
-            color: #fff;
-            border: none;
-            padding: 12px 25px;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 50px;
-            text-decoration: none;
-            margin-top: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            transition: all 0.3s ease;
-        }
-
-        .whatsapp-btn i {
-            margin-right: 10px;
-        }
-
-        .whatsapp-btn:hover {
-            background-color: #1ebc59;
+        
+        .about-img:hover img {
             transform: scale(1.05);
         }
+        
+        .about-text h2 {
+            font-size: 36px;
+            color: #2e8b57;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .about-text h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #2e8b57, #ffd700);
+            bottom: -10px;
+            left: 0;
+            border-radius: 2px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 17px;
+            color: #555;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: rgba(240, 247, 244, 0.9);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .contact-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #2e8b57, #ffd700);
+        }
+        
+        .contact-card i {
+            font-size: 40px;
+            color: #2e8b57;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover i {
+            transform: scale(1.2);
+            color: #ffd700;
+        }
+        
+        .contact-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .contact-card p {
+            color: #666;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2e8b57;
+            color: white;
+            padding: 40px 0 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, #ffd700, #2e8b57);
+        }
+        
+        .social-links {
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: white;
+            font-size: 22px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .social-links a:hover {
+            color: #ffd700;
+            transform: translateY(-3px);
+        }
+        
+        .social-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #ffd700;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .social-links a:hover::after {
+            width: 100%;
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero {
+                height: 400px;
+            }
+            
+            .hero h2 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .btn, .whatsapp-btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-img {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                flex-direction: column;
+            }
+            
+            .logo img {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+            
+            .hero {
+                height: 350px;
+            }
+            
+            .hero h2 {
+                font-size: 28px;
+            }
+            
+            .btn-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .whatsapp-btn {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+        }
     </style>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <div class="card">
-        <div class="image-container">
-            <img class="mango-image" src="https://th.bing.com/th/id/R.abb3bbe37c6593a9c5313fc98b72f3d2?rik=79C6Ax%2bq2u8qfw&pid=ImgRaw&r=0" alt="Mangoes of M & M">
-            <div class="overlay-text">Click On This Page To Order Now</div>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <!-- Custom Mango Logo -->
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjZmZkNzAwIiBkPSJNMjU2LDhDMTE5LDgsOCwxMTksOCwyNTZzMTExLDI0OCwyNDgsMjQ4czI0OC0xMTEsMjQ4LTI0OFMzOTMsOCwyNTYsOHoiLz48cGF0aCBmaWxsPSIjZTdhODAwIiBkPSJNMzg0LjUsMjE2LjVjMCw3MS4xLTU3LjYsMTI4LjctMTI4LjcsMTI4LjdjLTcxLjEsMC0xMjguNy01Ny42LTEyOC43LTEyOC43YzAtNzEuMSw1Ny42LTEyOC43LDEyOC43LTEyOC43QzMyNi45LDg3LjgsMzg0LjUsMTQ1LjQsMzg0LjUsMjE2LjV6Ii8+PHBhdGggZmlsbD0iI2ZmYzMwMCIgZD0iTTM1Mi41LDE5Mi41YzAsNTMuMy00My4yLDk2LjUtOTYuNSw5Ni41Yy01My4zLDAtOTYuNS00My4yLTk2LjUtOTYuNWMwLTUzLjMsNDMuMi05Ni41LDk2LjUtOTYuNUMzMDkuMyw5NiwzNTIuNSwxMzkuMiwzNTIuNSwxOTIuNXoiLz48cGF0aCBmaWxsPSIjMmU4YjU3IiBkPSJNMjU2LDEyOGMtNDguNSwwLTg4LDM5LjUtODgsODhjMCw0OC41LDM5LjUsODgsODgsODhjNDguNSwwLDg4LTM5LjUsODgtODhDMzQ0LDE2Ny41LDMwNC41LDEyOCwyNTYsMTI4eiBNMjU2LDI4OGMtMzkuNywwLTcyLTMyLjMtNzItNzJjMC0zOS43LDMyLjMtNzIsNzItNzJjMzkuNywwLDcyLDMyLjMsNzIsNzJDMzI4LDI1NS43LDI5NS43LDI4OCwyNTYsMjg4eiIvPjxwYXRoIGZpbGw9IiMyZThiNTciIGQ9Ik0yNTYsMTYwYy0zMS4xLDAtNTYsMjQuOS01Niw1NmMwLDMxLjEsMjQuOSw1Niw1Niw1NnM1Ni0yNC45LDU2LTU2QzMxMiwxODQuOSwyODcuMSwxNjAsMjU2LDE2MHogTTI1NiwyNDhjLTE3LjcsMC0zMi0xNC4zLTMyLTMyaDBjMC0xNy43LDE0LjMtMzIsMzItMzJjMTcuNywwLDMyLDE0LjMsMzIsMzJDMjg4LDIzMy43LDI3My43LDI0OCwyNTYsMjQ4eiIvPjwvc3ZnPg==" alt="Shan Fruit Farm Logo">
+                <div class="logo-text">
+                    <h1>Shan Fruit Farm</h1>
+                    <p>Premium Quality Pakistani Mangoes</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="content">
-            <div class="title">Mangoes of M & M</div>
-            <div class="subtitle">Product/service</div>
-            <a class="whatsapp-btn" href="https://wa.me/923024833827?text=Hello%2C%20I%20want%20to%20order%20your%20premium%20mangoes.%20Please%20share%20details." target="_blank">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
-        </div>
-    </div>
+    </header>
 
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Farm Fresh Pakistani Mangoes</h2>
+                <p>Direct from our orchards to your home - the sweetest, juiciest mangoes in Pakistan</p>
+                <div class="btn-container">
+                    <a href="#products" class="btn">View Our Mangoes</a>
+                    <a href="https://wa.me/923011311468" class="whatsapp-btn" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+                        Order on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Premium Mango Varieties</h2>
+                <p>We grow the finest quality mangoes using traditional farming methods for authentic taste</p>
+            </div>
+            <div class="products">
+                <!-- Product 1 - Sindhri -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://th.bing.com/th/id/OIP.tbPXNhZUO3ebNlrqJp231QHaHV?rs=1&pid=ImgDetMain" alt="Sindhri Mango">
+                        <div class="mango-animation" id="sindhri-animation"></div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Sindhri Mango</h3>
+                        <p>The king of Pakistani mangoes - sweet, fiberless, and aromatic</p>
+                        <p class="price">Rs. 2,000 per 5kg box</p>
+                    </div>
+                </div>
+                
+                <!-- Product 2 - Chaunsa -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://th.bing.com/th/id/OIP.9b8QQV-pefNIZ_LaoloGUgHaHa?rs=1&pid=ImgDetMain" alt="Chaunsa Mango">
+                        <div class="mango-animation" id="chaunsa-animation"></div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Chaunsa Mango</h3>
+                        <p>Juicy, rich flavor with perfect sweetness - a summer favorite</p>
+                        <p class="price">Rs. 2,000 per 5kg box</p>
+                    </div>
+                </div>
+                
+                <!-- Product 3 - Dusehri with Juice Animation -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://pakunitedfoods.com/wp-content/uploads/2023/06/Duseri-1-scaled.jpg" alt="Dusehri Mango">
+                        <div class="juice-animation" id="dusehri-juice"></div>
+                        <div class="mango-animation" id="dusehri-animation"></div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Dusehri Mango</h3>
+                        <p>Soft, aromatic, and delicious with a unique flavor profile</p>
+                        <p class="price">Rs. 1,800 per 5kg box</p>
+                    </div>
+                </div>
+                
+                <!-- Product 4 - Anwar Ratol -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1603569283847-aa295f0d016a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Anwar Ratol Mango">
+                        <div class="mango-animation" id="anwar-animation"></div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Anwar Ratol</h3>
+                        <p>Small in size but extremely sweet with rich aroma</p>
+                        <p class="price">Price coming soon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Shan Fruit Farm</h2>
+                    <p>Shan Fruit Farm is a family-owned mango orchard with over 30 years of experience in cultivating premium quality mangoes. Located in the heart of Pakistan's mango belt, our farm benefits from ideal climate conditions and fertile soil that produce the sweetest, most flavorful mangoes.</p>
+                    <p>We take pride in using traditional farming methods combined with modern quality control to deliver mangoes that meet the highest standards. Our mangoes are hand-picked at peak ripeness to ensure perfect taste and texture.</p>
+                    <p>From our farm to your table - experience the authentic taste of Pakistani mangoes!</p>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1597362925123-77861d3fbac7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Shan Fruit Farm">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch to place your order or inquire about wholesale opportunities</p>
+            </div>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Call Us</h3>
+                    <p>0302-4833827</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>WhatsApp</h3>
+                    <p><a href="https://wa.me/923024833827" style="color: #25D366; text-decoration: none;">Chat with us</a></p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>info@m&mfruitfarm.com</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>Multan, Punjab, Pakistan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/923011311468"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>© 2025 M & M Fruit Farm. All Rights Reserved.</p>
+            <p class="copyright">Premium Pakistani Mangoes - Direct from Our Farm</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mango Particle Animation
+        function createMangoParticles(containerId, count = 15) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            
+            for (let i = 0; i < count; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'mango-particle';
+                
+                // Random properties
+                const size = Math.random() * 10 + 5;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const delay = Math.random() * 5;
+                const duration = Math.random() * 3 + 2;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
+                particle.style.opacity = '0.6';
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Juice Drop Animation for Dusehri Mango
+        function createJuiceDrops(containerId, count = 8) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            
+            for (let i = 0; i < count; i++) {
+                const drop = document.createElement('div');
+                drop.className = 'juice-drop';
+                
+                // Random properties
+                const size = Math.random() * 30 + 15;
+                const posX = Math.random() * 80 + 10;
+                const posY = Math.random() * 50 + 30;
+                const delay = Math.random() * 3;
+                const duration = Math.random() * 2 + 1;
+                const fallDistance = Math.random() * 50 + 30;
+                
+                drop.style.width = `${size}px`;
+                drop.style.height = `${size * 1.2}px`;
+                drop.style.left = `${posX}%`;
+                drop.style.top = `-${size}px`;
+                drop.style.animation = `juiceFall ${duration}s ease-in ${delay}s infinite`;
+                
+                // Create keyframes dynamically
+                const style = document.createElement('style');
+                style.innerHTML = `
+                    @keyframes juiceFall {
+                        0% {
+                            opacity: 0;
+                            transform: translateY(0) rotate(0deg);
+                        }
+                        10% {
+                            opacity: 0.8;
+                        }
+                        90% {
+                            opacity: 0.8;
+                        }
+                        100% {
+                            opacity: 0;
+                            transform: translateY(${fallDistance}px) rotate(180deg);
+                        }
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                container.appendChild(drop);
+            }
+        }
+        
+        // Initialize animations when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mango particles for all products
+            createMangoParticles('sindhri-animation');
+            createMangoParticles('chaunsa-animation');
+            createMangoParticles('dusehri-animation');
+            createMangoParticles('anwar-animation');
+            
+            // Special juice animation for Dusehri mango
+            createJuiceDrops('dusehri-juice');
+            
+            // Add hover effect to product cards
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                    this.style.boxShadow = '0 15px 30px rgba(0,0,0,0.15)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = '';
+                    this.style.boxShadow = '';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
